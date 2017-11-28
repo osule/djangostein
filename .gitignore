@@ -1,0 +1,6 @@
+*.png
+*.pyc
+*.pyd
+*.sqlite3
+migrations
+.vscode/

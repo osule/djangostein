@@ -1,0 +1,21 @@
+{% load normal_filters %}
+{% load static %}
+
+<h1>Login</h1>
+
+
+
+<a href="{% url 'home:index' %}">Home</a>
+<a href="{% url 'authing:login' %}">Login</a>
+<a href="{% url 'authing:register' %}">Register</a>
+
+
+{% assign_tuple 2 3  as rarg %}
+
+{{ 1|page_not_over_amount:rarg }}
+
+<div>
+    {% for photo in photos %}
+        <img src="{{ photo.url }}" />
+    {% endfor %}
+</div>

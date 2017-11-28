@@ -1,0 +1,22 @@
+web:
+  extends:
+    file: common.yml
+    service: base
+  build: ./web
+  dockerfile: Dockerfile
+  ports:
+    - "5000:5000"
+
+nginx:
+  extends:
+    file: common.yml
+    service: base
+  build: ./nginx
+  dockerfile: Dockerfile
+  ports:
+    - "80:80"
+  volumes_from:
+    - web
+  links:
+    - web:web
+ 

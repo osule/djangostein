@@ -1,0 +1,35 @@
+<h1>Login</h1>
+
+<script>
+    function createDashboard(){
+        alert("here!");
+        summaries = {{content}};
+        summary = document.getElementById('analysis');
+        for(var i = 0; i < summaries.length;i++){
+            var div = document.createElement('div');
+            for (line in summaries[i]){
+                var para = document.createElement('p');
+                para.innerHTML = summaries[i][line];
+                summary.appendChild(para);
+            }
+        }
+        graphs = {{div}};
+        graph_div = document.getElementById('graph');
+        for(var h = 0; h < graphs.length;h++){
+            var div = document.createElement('div');
+            div.innerHTML = graphs[i];
+            graph_div.appendChild(div);
+        }
+    }
+     window.onload = function(){
+        createDashboard();
+    };
+</script>
+
+
+<form action="{% url 'administration:administration_login' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+    <input type="hidden" name="next" value="{{ next }}"/>
+</form>

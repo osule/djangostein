@@ -1,0 +1,5 @@
+base:
+  build: .
+  volumes:
+    - ./web:/usr/src/web
+    - ./nginx:/usr/src/server
